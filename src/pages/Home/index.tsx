@@ -1,15 +1,36 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
 
-import { HelloWorld } from './style';
+import {
+    Background,
+    MainContainer,
+    HeaderView,
+    ImageTitleContainer,
+    Image,
+    Title,
+    FilterContainer,
+    FilterText,
+    FilterImage
+} from './style';
 
 const Home = () => {
-    return(
-        <View>
-            <HelloWorld>
-                Hello World!
-            </HelloWorld>
-        </View>
+    return (
+        <Background >
+            <MainContainer>
+                <HeaderView>
+                    <ImageTitleContainer>
+                        <Image 
+                            source={require('../../assets/Pokeball.png')}
+                        />
+                        <Title>Pokédex</Title>
+                    </ImageTitleContainer>
+                    <FilterContainer>
+                        <FilterText>#</FilterText>
+                        <FilterImage source={require('../../assets/Vector.png')} />
+                    </FilterContainer>
+                </HeaderView>
+            </MainContainer>
+        </Background>
     )
 }
 
