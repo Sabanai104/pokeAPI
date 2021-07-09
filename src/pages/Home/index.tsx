@@ -49,6 +49,13 @@ interface IPokemonsData {
             }
         }
     ]
+    abilities: [
+        {
+            ability:{
+                name: string
+            }
+        }
+    ]
 }
 
 const Home: FC<IHome> = ({ navigation }) => {
@@ -93,6 +100,7 @@ const Home: FC<IHome> = ({ navigation }) => {
             return el.name === text.toLowerCase()
                 || el.types.some(data => data.type.name === text.toLowerCase())
                 || el.types.some(data => data.type.name === translateText(text))
+                || el.abilities.some(data => data.ability.name === text.toLowerCase())
         });
         if (filtered[0] != undefined) {
             setSearchPokemon(filtered);
