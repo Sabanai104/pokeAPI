@@ -1,7 +1,7 @@
 import React, { useState, useEffect, FC } from 'react';
 import { getPokemonData, getPokemons } from '../../services/requisitions';
 import { validateText, translateText } from '../../utils/CommonsMethods';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 
 import {
     Background,
@@ -29,6 +29,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome5';
 import Loading from '../../components/SecondLoading';
 import Failed from '../../components/Failed';
+import { Item } from 'semantic-ui-react';
 
 interface IHome {
     navigation: NavigationScreenProp<NavigationState, NavigationParams>
@@ -51,7 +52,7 @@ interface IPokemonsData {
     ]
     abilities: [
         {
-            ability:{
+            ability: {
                 name: string
             }
         }
@@ -213,9 +214,17 @@ const Home: FC<IHome> = ({ navigation }) => {
                                         data={!loaded ? pokemonsData : searchPokemon}
                                         columnWrapperStyle={{ justifyContent: 'space-between' }}
                                         numColumns={3}
-                                        renderItem={({ item }: any) => {
+                                        renderItem={({ item, index }: any) => {
                                             return (
-                                                <PokemonCard key={item.id} item={item} index={item.id} validateText={validateText} navigation={navigation} />
+                                                index + 1 === searchPokemon.length && loaded ? (
+                                                    <>
+                                                        <PokemonCard key={item.id} item={item} index={item.id} validateText={validateText} navigation={navigation} />
+                                                        <View style={{ width: '31.34%', height: 140 }} />
+                                                    </>
+                                                ) : (
+
+                                                    <PokemonCard key={item.id} item={item} index={item.id} validateText={validateText} navigation={navigation} />
+                                                )
                                             )
                                         }}
                                     />

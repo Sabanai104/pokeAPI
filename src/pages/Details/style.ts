@@ -135,6 +135,7 @@ export const StatusContainer = styled.View`
 `;
 
 export const StatusInfoContainer = styled.View`
+    justify-content: center;
     flex-direction: row;
     margin-top: 7px;
     width: 95%;

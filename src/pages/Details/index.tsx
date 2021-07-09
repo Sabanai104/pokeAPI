@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, BackHandler } from 'react-native';
 import { getPokemonDataNumber } from '../../services/requisitions';
 
 import ArrowIcon from 'react-native-vector-icons/AntDesign';
@@ -105,9 +105,16 @@ const Details = ({ route, navigation }: any) => {
         }
     }, [delayButton]);
 
-    const buttonFunctions = () => {
-
-    }
+    useEffect(() => {
+        function handleBackButton() {
+          navigation.navigate('home');
+          return true;
+        }
+    
+        const backHandler = BackHandler.addEventListener('hardwareBackPress', handleBackButton);
+    
+        return () => backHandler.remove();
+      }, [navigation]);
 
     return (
         <Background
