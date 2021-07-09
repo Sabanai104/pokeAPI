@@ -8,19 +8,19 @@ Além disso, essa aplicação usufrui da **[PokéAPI](https://pokeapi.co/)**, um
 
 <img src="assets/img/mainHome.jpg"
      alt="home"
-     style="width: 150px; height: 300px" />
+     style="width: 50px; height: 100px" />
 
 <img src="assets/img/mainHomeSorted.jpg"
      alt="homeSorted"
-     style="width: 150px; height: 300px" />
+     style="width: 50px; height: 100px" />
 
 <img src="assets/img/CharmanderSearch.jpg"
      alt="search"
-     style="width: 150px; height: 300px" />
+     style="width: 50px; height: 100px" />
 
 <img src="assets/img/Bulbasaur.jpg"
      alt="detail"
-     style="width: 150px; height: 300px " />
+     style="width: 50px; height: 100px " />
 
 
 # Rodando o projeto
