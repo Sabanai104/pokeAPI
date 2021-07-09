@@ -27,8 +27,8 @@ export const TextIndice = styled.Text`
 `;
 
 export const PokemonImg = styled.Image`
-    width: 70%;
-    height: 50%;
+    width: 80px;
+    height: 75px;
 `;
 
 export const PokemonTextContainer = styled.View`

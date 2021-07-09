@@ -21,7 +21,7 @@ export const getPokemonData = async (pokemonName: string) => {
 
 export const getPokemonDataNumber = async (id: number) => {
     try {
-        const res = await api.get(`dsa/${id}`);
+        const res = await api.get(`pokemon/${id}`);
         return res.data;
     } catch (error) {
         return false;

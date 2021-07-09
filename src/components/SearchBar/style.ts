@@ -16,18 +16,6 @@ export const SearchContainer = styled.View`
     border: 2px solid #E0E0E0;
 `;
 
-export const SearchContainer2 = styled.View`
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
-    width: 100%;
-    height: 45px;
-    margin-top: 10px;
-    border-radius: 15px;
-    border: 2px solid #E0E0E0;
-`;
-
 export const SearchImage = styled.Image`
     width: 20px;
     height: 20px;
