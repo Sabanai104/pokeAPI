@@ -11,12 +11,13 @@ export const Background = styled.View`
 export const MainContainer = styled.View`
     width: 92%;
     height: 100%;
+    align-items: center;
 `;
 
 export const HeaderView = styled.View`
     flex-direction: row;
-    width: 100%;
-    height: 5%;
+    width: 96%;
+    height: 40px;
     margin-top: 24px;
     justify-content: space-between;
     align-items: center;
@@ -28,9 +29,9 @@ export const ImageTitleContainer = styled.View`
      align-items: center;
 `;
 
-export const Image = styled.Image `
-    width: 24px;
-    height: 24px;
+export const Image = styled.Image`
+    width: 26px;
+    height: 26px;
 `;
 
 export const Title = styled.Text`
@@ -55,3 +56,9 @@ export const FilterImage = styled.Image`
     width: 10px;
     height: 19px;
 `;
+
+export const FlatList = styled.FlatList`
+    margin-top: 10px;
+    width: 100%;
+`;
+
