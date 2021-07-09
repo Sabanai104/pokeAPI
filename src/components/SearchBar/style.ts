@@ -6,7 +6,19 @@ export const TouchableWithoutFeedback = styled.TouchableNativeFeedback`
 
 export const SearchContainer = styled.View`
     flex-direction: row;
-    justify-content: center;
+    justify-content: ${props => props.primary ? 'space-between': 'center'};
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    margin-top: 10px;
+    border-radius: 15px;
+    border: 2px solid #E0E0E0;
+`;
+
+export const SearchContainer2 = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
     text-align: center;
     align-items: center;
     width: 100%;
@@ -22,7 +34,8 @@ export const SearchImage = styled.Image`
 `;
 
 export const SearchText = styled.TextInput`
-    max-width: 80%;
+    max-width: 83%;
+    width: ${props => props.primary ? '83%': '50%'};
     height: 45px;
     font-size: 15px;
     color: #666666;

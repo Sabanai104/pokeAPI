@@ -1,8 +1,8 @@
 import React from 'react';
 import * as Progress from 'react-native-progress';
-import { View } from 'react-native';
 import { LoadingContainer } from './style';
 import {cardColor} from '../../utils/CommonsMethods';
+import { useEffect } from 'react';
 
 const Loading = ({color}: {color: string}) => {
     return (

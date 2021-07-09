@@ -16,7 +16,6 @@ import {
     PokemonTextContainer,
     Touchable
 } from './style';
-import { useEffect } from 'react';
 
 interface IPokemonCard {
     item: {

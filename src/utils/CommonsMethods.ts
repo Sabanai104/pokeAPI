@@ -64,3 +64,54 @@ export const cardColor = (type: string) => {
             return '#A7B723'
     }
 };
+
+export const translateText = (text: string) => {
+    switch (text.toLowerCase()) {
+        case 'grama':
+            return 'grass'
+        case 'fogo':
+            return 'fire'
+        case 'água':
+            return 'water'
+        case 'agua':
+            return 'water'
+        case 'normal':
+            return 'normal'
+        case 'pedra':
+            return 'rock'
+        case 'fantasma':
+            return 'ghost'
+        case 'ludator':
+            return 'fighting'
+        case 'ferro':
+            return 'steel'
+        case 'voador':
+            return 'flying'
+        case 'venenoso':
+            return 'poison'
+        case 'terra':
+            return 'ground'
+        case 'psíquico' || 'psiquico':
+            return 'psychic'
+        case 'psiquico':
+            return 'psychic'
+        case 'gelo':
+            return 'ice'
+        case 'escuridão':
+            return 'dark'
+        case 'escuridao':
+            return 'dark'
+        case 'elétrico':
+            return 'electric'
+        case 'eletrico':
+            return 'electric'
+        case 'fada':
+            return 'fairy'
+        case 'dragão':
+            return 'dragon'
+        case 'dragao':
+            return 'dragon'
+        case 'inseto':
+            return 'bug'
+    }
+}
