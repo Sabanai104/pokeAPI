@@ -39,17 +39,13 @@ export const Title = styled.Text`
     font-size: 24px;
     line-height: 32px;
     font-weight: bold;
+    font-family: 'Poppins';
 `;
 
 export const FilterContainer = styled.View`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-`;
-
-export const FilterText = styled.Text`
-    font-size: 14px;
-    font-weight: 500;
 `;
 
 export const FilterImage = styled.Image`

@@ -1,6 +1,6 @@
 import React, { Dispatch, FC, SetStateAction, useRef, useState } from 'react';
 
-import { SearchContainer, SearchText, TouchableWithoutFeedback, SearchContainer2 } from './style';
+import { SearchContainer, SearchText, TouchableWithoutFeedback } from './style';
 import Icon from 'react-native-vector-icons/Fontisto';
 import { TextInput, View, TouchableOpacity, Text } from 'react-native';
 

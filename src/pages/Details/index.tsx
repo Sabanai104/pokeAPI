@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Animated, View, Text, Image, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Text, TouchableOpacity } from 'react-native';
 import { getPokemonDataNumber } from '../../services/requisitions';
 
 import ArrowIcon from 'react-native-vector-icons/AntDesign';
@@ -53,39 +53,60 @@ interface IPokemonsData {
 
 const Details = ({ route, navigation }: any) => {
     const { index, item } = route.params;
+    const [delayButton, setDelayButton] = useState(true);
     const [failed, setFailed] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
 
     const nextPokemon = async (id: number) => {
-        setIsLoading(!isLoading);
-        setTimeout(async () => {
-            const pokemon = await getPokemonDataNumber(id);
-            if (pokemon == false) {
-                setFailed(false);
-                return;
-            }
-            navigation.push('details', {
-                index: id,
-                item: pokemon
-            });
-        }, 1000);
-        setIsLoading(!isLoading);
+        if (delayButton) {
+            setDelayButton(!delayButton);
+            setIsLoading(!isLoading);
+            setTimeout(async () => {
+                const pokemon = await getPokemonDataNumber(id);
+                if (pokemon == false) {
+                    setFailed(false);
+                    return;
+                }
+                navigation.push('details', {
+                    index: id,
+                    item: pokemon
+                });
+            }, 500);
+            setIsLoading(!isLoading);
+        }
     }
 
     const previousPokemon = async (id: number) => {
-        setIsLoading(!isLoading);
-        setTimeout(async () => {
-            const pokemon = await getPokemonDataNumber(id);
-            if (pokemon == false) {
-                setFailed(false);
-                return;
-            }
-            navigation.push('details', {
-                index: id,
-                item: pokemon
-            });
-        }, 1000);
-        setIsLoading(!isLoading);
+        if (delayButton) {
+            setDelayButton(!delayButton);
+
+            setIsLoading(!isLoading);
+            setTimeout(async () => {
+                const pokemon = await getPokemonDataNumber(id);
+                if (pokemon == false) {
+                    setFailed(false);
+                    return;
+                }
+                navigation.push('details', {
+                    index: id,
+                    item: pokemon
+                });
+            }, 500);
+            setIsLoading(!isLoading);
+        }
+    }
+
+    useEffect(() => {
+        if (!delayButton) {
+            const timeout = setTimeout(() => {
+                setDelayButton(!delayButton);
+            }, 1000);
+            return () => clearTimeout(timeout);
+        }
+    }, [delayButton]);
+
+    const buttonFunctions = () => {
+
     }
 
     return (
@@ -107,7 +128,11 @@ const Details = ({ route, navigation }: any) => {
                         <PokeballImg source={require('../../assets/Pokeball2.png')} />
                         <HeaderContainer>
                             <ArrowNameContainer >
-                                <TouchableOpacity onPress={() => navigation.navigate('home')}>
+                                <TouchableOpacity style={{
+                                    justifyContent: 'center',
+                                    height: 40,
+                                    width: 35
+                                }} onPress={() => navigation.navigate('home')}>
                                     <ArrowIcon name='arrowleft' size={25} color='white' />
                                 </TouchableOpacity>
                                 <NameText>{item.name}</NameText>

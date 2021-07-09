@@ -27,7 +27,7 @@ import PokemonCard from '../../components/PokemonCard';
 
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesomeIcons from 'react-native-vector-icons/FontAwesome5';
-import Loading from '../../components/Loading';
+import Loading from '../../components/SecondLoading';
 import Failed from '../../components/Failed';
 
 interface IHome {
@@ -103,13 +103,15 @@ const Home: FC<IHome> = ({ navigation }) => {
     }
 
     const requisitions = async () => {
+        setIsLoading(true);
         const res = await getPokemons();
         if (res == false) {
-            setFailed(res)
+            setFailed(res);
+            setIsLoading(false);
             return;
         }
-
         await loadingPokemon(res);
+        setIsLoading(false);
     }
 
     const loadingPokemon = async (data: IPokemonsData[]) => {
@@ -198,7 +200,7 @@ const Home: FC<IHome> = ({ navigation }) => {
                             />
 
                             {
-                                isLoading ? <Loading color='grass' /> : (
+                                isLoading == true ? <Loading /> : (
                                     <FlatList
                                         data={!loaded ? pokemonsData : searchPokemon}
                                         columnWrapperStyle={{ justifyContent: 'space-between' }}

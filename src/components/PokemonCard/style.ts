@@ -24,6 +24,7 @@ export const TextIndice = styled.Text`
     text-align: right;
     font-size: 11px;
     margin-top: 3px;
+    font-family: 'Poppins';
 `;
 
 export const PokemonImg = styled.Image`

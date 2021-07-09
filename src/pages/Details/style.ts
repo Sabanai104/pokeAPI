@@ -35,6 +35,7 @@ export const NameText = styled.Text`
     font-weight: bold;
     color: white;
     margin-left: 15px;
+    font-family: 'Poppins';
 `;
 
 export const IndiceText = styled.Text`
@@ -42,6 +43,7 @@ export const IndiceText = styled.Text`
     text-transform: capitalize;
     font-weight: bold;
     color: white;
+    font-family: 'Poppins';
 `;
 
 export const ArrowLeft = styled.TouchableOpacity`
