@@ -40,7 +40,7 @@ Esse projeto foi criado utilizando a própria [CLI do React Native](https://reac
 
 Como pedido, foi gerado um arquivo .apk do app para que vocês possam ver a vesão buildada da mesma, segue link abaixo:
 
-* [Link: Pokédex]()
+* [Link: Pokédex](https://drive.google.com/drive/folders/1JDc-uzsnpLiFuQ7R_ax1GvxRhDfpnW8D?usp=sharing)
 
 # Outros
 
